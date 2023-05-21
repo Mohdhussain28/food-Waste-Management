@@ -7,14 +7,14 @@ const authMiddleware = require("../middlewares/auth");
 
 const Firestore = admin.firestore();
 const app = express();
-app.use(cors({ origin: true }));
+app.use(cors({origin: true}));
 
 app.use(authMiddleware);
 app.use("/doner", require("./doner"));
 app.use("/collector", require("./collector"));
 
 app.use((err, req, res, next) => {
-    res.status(err.statusCode || 500).send(err.message || "Unexpected error!");
+  res.status(err.statusCode || 500).send(err.message || "Unexpected error!");
 });
 
 app.listen();

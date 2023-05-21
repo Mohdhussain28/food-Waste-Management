@@ -6,7 +6,7 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:notrecommended",
+    "eslint:recommended",
     "google",
   ],
   rules: {
